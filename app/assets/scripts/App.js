@@ -1,1 +1,1 @@
-alert("Hello, this is just a dragon!!!");
+import '../styles/styles.css'
