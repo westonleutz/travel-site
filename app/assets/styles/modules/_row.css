@@ -3,66 +3,60 @@
     padding-top: 80px;
   }
 
-  &--gutters {
-    margin-right: -65px;
-  }
 
-  &--gutters-small {
-    margin-right: -45px;
-  }
 
-  &--gutters-large {
-    margin-right: -100px;
-  }
 
-  &--gutters > div {
-    padding-right: 65px;
-  }
-
-  &--gutters-small > div {
-    padding-right: 45px;
-  }
-
-  &--gutters-large > div {
-    padding-right: 100px;
-  }
 
   @mixin atMedium {
-    &__medium-4 {
-      float: left;
-      width: 33.3333%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    &--gutters {
+      column-gap: 5.3%;
     }
 
-    &__medium-4--larger {
-      width: 37%;
+    &--gutters-small {
+      column-gap: 8%;
+    }
+
+    &--gutters-large {
+      column-gap: 3.6%;
+    }
+
+    &__medium-4 {
+      grid-column: span 4;
     }
 
     &__medium-6 {
-      float: left;
-      width: 50%;
+      grid-column: span 6;
     }
 
     &__medium-8 {
-      float: left;
-      width: 66.6666%;
+      grid-column: span 8;
+    }
+  }
+
+  @mixin atLarge {
+
+    &__large-4 {
+      grid-column: span 4;
     }
 
-    &__medium-8--smaller {
-      width: 63%;
+    &__large-6 {
+      grid-column: span 6;
+    }
+
+    &__large-8 {
+      grid-column: span 8;
     }
   }
 
   /* Begin Equal Height Rules */
   &--equal-height-at-medium {
     @mixin atMedium {
-      display: flex;
-    }
-
-    & > div {
-      float: none;
-      display: flex;
+      & > div {
+        display: flex;
+      }
     }
   }
-
-  @mixin clearfix
 }
